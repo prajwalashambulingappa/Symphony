@@ -1,4 +1,4 @@
-package com.example.coreservicesmongo;
+package com.example.coreservicesmongo.configurations;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.client.MongoDatabase;
@@ -6,9 +6,9 @@ import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 
 import java.util.Objects;
 
-public class DatabaseConfig extends SimpleMongoClientDatabaseFactory {
+public class DatabaseConfig {
 
-    private String DbConnectionString;
+/*    private String DbConnectionString;
     public DatabaseConfig(String dbConnectionString, ConnectionString connection){
         super(connection);
         this.DbConnectionString = dbConnectionString;
@@ -19,4 +19,5 @@ public class DatabaseConfig extends SimpleMongoClientDatabaseFactory {
         ConnectionString connection = new ConnectionString(DbConnectionString);
         return super.doGetMongoDatabase(Objects.requireNonNull(connection.getDatabase()));
     }
+}*/
 }

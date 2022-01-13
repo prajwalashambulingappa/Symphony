@@ -1,8 +1,9 @@
-package com.example.coreservicesmongo;
+package com.example.coreservicesmongo.entity;
 
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -11,8 +12,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "movies")
 public class Movies {
 
+    @Transient
+    public static final String SEQUENCE_NAME = "sequence";
+
     @Id
     private String id;
+    private String tenantid;
     public String name;
     public String genres;
 
@@ -22,6 +27,14 @@ public class Movies {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getTenantid() {
+        return tenantid;
+    }
+
+    public void setTenantid(String tenantid) {
+        this.tenantid = tenantid;
     }
 
     public String getName() {
@@ -44,6 +57,7 @@ public class Movies {
     public String toString() {
         return "Movies{" +
                 "id='" + id + '\'' +
+                ", tenantid='" + tenantid + '\'' +
                 ", name='" + name + '\'' +
                 ", genres='" + genres + '\'' +
                 '}';

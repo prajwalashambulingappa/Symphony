@@ -1,5 +1,7 @@
-package com.example.coreservicesmongo;
+package com.example.coreservicesmongo.controller;
 
+import com.example.coreservicesmongo.entity.Movies;
+import com.example.coreservicesmongo.services.MoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,17 +1,17 @@
-package com.example.coreservicesmongo;
+package com.example.coreservicesmongo.configurations;
 
 public class TenantContext {
     public static final String Tenant_ID_Key = "X-Tenant-ID";
     private static final ThreadLocal<TenantContext> context = new ThreadLocal<>();
     public final int TenantID;
-    private String mongoConnection = "mongodb+srv://prajwala:password_01@cluster0.pjopb.mongodb.net/ID?retryWrites=true&w=majority";
-
+    /*private String mongoConnection = "mongodb+srv://prajwala:password_01@cluster0.pjopb.mongodb.net/ID?retryWrites=true&w=majority";
+*/
 
     public TenantContext(int tenantID) {
         TenantID = tenantID;
-        mongoConnection = "mongodb+srv://prajwala:password_01@cluster0.pjopb.mongodb.net/ID?retryWrites=true&w=majority";
+        /*mongoConnection = "mongodb+srv://prajwala:password_01@cluster0.pjopb.mongodb.net/ID?retryWrites=true&w=majority";
         mongoConnection = mongoConnection.replace("ID", String.valueOf(tenantID));
-    }
+ */   }
 
     public static void createContext(int ID){
         if (ID <= 0){
@@ -31,10 +31,10 @@ public class TenantContext {
     }
 
 
-    public String getDBConnectionString(){
+ /*   public String getDBConnectionString(){
         TenantContext internalContext = context.get();
         return internalContext.mongoConnection;
-    }
+    }*/
 
     public static void clear(){
         context.remove();

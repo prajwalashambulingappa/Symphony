@@ -1,4 +1,4 @@
-package com.example.coreservicesmongo;
+package com.example.coreservicesmongo.configurations;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

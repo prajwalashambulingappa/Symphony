@@ -1,17 +1,15 @@
-package com.example.coreservicesmongo;
+package com.example.coreservicesmongo.configurations;
 
 import com.mongodb.ConnectionString;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.*;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.context.WebApplicationContext;
 
-@Configuration
-@Lazy
+/*@Configuration
+@Lazy*/
 public class MongoConfig {
 
-    @Bean
+   /* @Bean
     @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
     @Lazy
     @Primary
@@ -20,5 +18,5 @@ public class MongoConfig {
         ConnectionString connection = new ConnectionString(tenantContext.getDBConnectionString());
         System.out.println(tenantContext+"  "+connection);
         return new MongoTemplate(new DatabaseConfig(tenantContext.getDBConnectionString(), connection));
-    }
+    }*/
 }
